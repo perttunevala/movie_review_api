@@ -1,4 +1,4 @@
-# Movie Review A
+# Movie Review 
 
 Tämä on tietokannat ja rajapinnat kurssin harjoitustyö
 
