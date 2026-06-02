@@ -28,6 +28,12 @@ Sovellus täyttää CRUD-vaatimukset:
 
 Käyttäjä kirjautuu sisään JWT-tokenilla. Token vaaditaan kaikissa `/movies` ja `/reviews` reiteissä.
 
+Lisäksi sovelluksessa on muutamia tarkistuksia:
+
+- elokuvan julkaisuvuoden pitää olla järkevällä välillä
+- arvostelun arvosanan pitää olla kokonaisluku väliltä 1-5
+- arvostelua voi muokata tai poistaa vain sen kirjoittanut käyttäjä
+
 ## Tietokanta
 
 Tietokannan nimi:
@@ -150,6 +156,7 @@ DELETE /reviews/:id
 ```
 
 Arvostelua lisättäessä `user_id` otetaan JWT-tokenista, ei request bodysta.
+Arvostelun muokkaus ja poisto onnistuvat vain samalla käyttäjällä, joka on kirjoittanut arvostelun.
 
 ## Esimerkkipyynnöt
 
