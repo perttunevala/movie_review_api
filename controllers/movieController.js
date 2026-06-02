@@ -1,24 +1,5 @@
 const movieModel = require('../models/movieModel');
 
-const getMovieInputError = ({ title, genre, release_year }) => {
-  const year = Number(release_year);
-  const currentYear = new Date().getFullYear() + 1;
-
-  if (!title || title.trim().length < 2) {
-    return 'Elokuvan nimessa pitaa olla vahintaan kaksi merkkia';
-  }
-
-  if (!genre || genre.trim().length < 2) {
-    return 'Genren pitaa olla vahintaan kaksi merkkia';
-  }
-
-  if (!Number.isInteger(year) || year < 1888 || year > currentYear) {
-    return `Julkaisuvuoden pitaa olla valilta 1888-${currentYear}`;
-  }
-
-  return null;
-};
-
 const getAllMovies = async (req, res) => {
   try {
     const movies = await movieModel.findAll();
@@ -44,18 +25,13 @@ const getMovieById = async (req, res) => {
 
 const createMovie = async (req, res) => {
   const { title, genre, release_year } = req.body;
-  const inputError = getMovieInputError({ title, genre, release_year });
 
-  if (inputError) {
-    return res.status(400).json({ message: inputError });
+  if (!title || !genre || !release_year) {
+    return res.status(400).json({ message: 'Title, genre and release_year are required' });
   }
 
   try {
-    const movieId = await movieModel.create({
-      title: title.trim(),
-      genre: genre.trim(),
-      release_year: Number(release_year)
-    });
+    const movieId = await movieModel.create({ title, genre, release_year });
     const movie = await movieModel.findById(movieId);
 
     return res.status(201).json(movie);
@@ -66,18 +42,13 @@ const createMovie = async (req, res) => {
 
 const updateMovie = async (req, res) => {
   const { title, genre, release_year } = req.body;
-  const inputError = getMovieInputError({ title, genre, release_year });
 
-  if (inputError) {
-    return res.status(400).json({ message: inputError });
+  if (!title || !genre || !release_year) {
+    return res.status(400).json({ message: 'Title, genre and release_year are required' });
   }
 
   try {
-    const affectedRows = await movieModel.update(req.params.id, {
-      title: title.trim(),
-      genre: genre.trim(),
-      release_year: Number(release_year)
-    });
+    const affectedRows = await movieModel.update(req.params.id, { title, genre, release_year });
 
     if (!affectedRows) {
       return res.status(404).json({ message: 'Movie not found' });

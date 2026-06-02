@@ -28,21 +28,17 @@ const create = async ({ user_id, movie_id, rating, comment }) => {
   return result.insertId;
 };
 
-const update = async (reviewId, userId, { rating, comment }) => {
+const update = async (reviewId, { rating, comment }) => {
   const [result] = await db.query(
-    'UPDATE reviews SET rating = ?, comment = ? WHERE review_id = ? AND user_id = ?',
-    [rating, comment, reviewId, userId]
+    'UPDATE reviews SET rating = ?, comment = ? WHERE review_id = ?',
+    [rating, comment, reviewId]
   );
 
   return result.affectedRows;
 };
 
-const remove = async (reviewId, userId) => {
-  const [result] = await db.query(
-    'DELETE FROM reviews WHERE review_id = ? AND user_id = ?',
-    [reviewId, userId]
-  );
-
+const remove = async (reviewId) => {
+  const [result] = await db.query('DELETE FROM reviews WHERE review_id = ?', [reviewId]);
   return result.affectedRows;
 };
 
