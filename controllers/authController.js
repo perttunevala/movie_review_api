@@ -55,7 +55,7 @@ const login = async (req, res) => {
     const passwordMatches = await bcrypt.compare(password, user.password_hash);
 
     if (!passwordMatches) {
-      return res.status(401).json({ message: 'Kirjautumistiedot eivat taysmanneet' });
+      return res.status(401).json({ message: 'Kirjautumistiedot eivat tasmanneet' });
     }
 
     const token = jwt.sign(
