@@ -2,6 +2,8 @@
 
 Tämä on tietokannat ja rajapinnat kurssin harjoitustyö
 
+Työhön pystyvät eri käyttäjät lisäämään elokuvia ja arvosteluja niille.
+
 Sovelluksessa käyttäjä voi rekisteröityä, kirjautua sisään ja käyttää suojattuja reittejä JWT-tokenin avulla. Salasanat tallennetaan tietokantaan bcryptillä kryptattuina.
 
 # työssä käytetyt teknologiat
