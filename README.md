@@ -117,67 +117,7 @@ DELETE /reviews/:id
 Arvostelua lisättäessä `user_id` otetaan JWT-tokenista, ei request bodysta.
 Arvostelun muokkaus ja poisto onnistuvat vain samalla käyttäjällä, joka on kirjoittanut arvostelun.
 
-## Esimerkkipyynnöt
 
-### Register
-
-```http
-POST http://localhost:3000/auth/register
-```
-
-```json
-{
-  "username": "matti",
-  "password": "salasana123"
-}
-```
-
-### Login
-
-```http
-POST http://localhost:3000/auth/login
-```
-
-```json
-{
-  "username": "matti",
-  "password": "salasana123"
-}
-```
-
-Login palauttaa JWT-tokenin. Suojattuihin reitteihin lisätään header:
-
-```text
-Authorization: Bearer <token>
-```
-
-### Create Movie
-
-```http
-POST http://localhost:3000/movies
-```
-
-```json
-{
-  "title": "Inception",
-  "genre": "Sci-Fi",
-  "release_year": 2010
-}
-```
-
-### Create Review
-
-```http
-POST http://localhost:3000/reviews
-```
-
-```json
-{
-  "movie_id": 1,
-  "rating": 5,
-  "comment": "Hyva elokuva."
-}
-```
 
 ## Testidata
 
@@ -203,49 +143,7 @@ anna  / salasana126
 sari  / salasana127
 ```
 
-## Asennus ja käynnistys
 
-1. Kloonaa projekti GitHubista.
-2. Asenna riippuvuudet:
-
-```bash
-npm install
-```
-
-3. Luo `.env`-tiedosto `.env.example`-tiedoston pohjalta:
-
-```env
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=oma_mysql_salasana
-DB_NAME=movie_review_db
-JWT_SECRET=oma_salainen_avain
-PORT=3000
-```
-
-4. Luo tietokanta ja taulut ajamalla phpMyAdminissa:
-
-```text
-sql/schema.sql
-```
-
-5. Lisää testidata ajamalla phpMyAdminissa:
-
-```text
-sql/reset_seed.sql
-```
-
-6. Käynnistä sovellus:
-
-```bash
-npm start
-```
-
-API käynnistyy osoitteeseen:
-
-```text
-http://localhost:3000
-```
 
 ## Testaus
 
