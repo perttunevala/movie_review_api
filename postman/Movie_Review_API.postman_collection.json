@@ -32,7 +32,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"salasana123\"\n}",
+              "raw": "{\n  \"username\": \"sari\",\n  \"password\": \"salasana127\"\n}",
               "options": {
                 "raw": {
                   "language": "json"

@@ -297,5 +297,5 @@ API on testattu Postmanilla. Testauksessa tarkistettiin:
 Esittelyvideon linkki:
 
 ```text
-Lisää tähän esittelyvideon linkki
+Video lisätään README-tiedostoon ennen Moodle-palautusta.
 ```
