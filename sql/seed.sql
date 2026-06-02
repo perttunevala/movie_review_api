@@ -17,12 +17,12 @@ INSERT INTO movies (title, genre, release_year) VALUES
 ('Titanic', 'Romance', 1997);
 
 INSERT INTO reviews (user_id, movie_id, review_date, rating, comment) VALUES
-(1, 1, CURDATE(), 5, 'Indiana Jones on kestoklassikko, jonka pariin palaa aina uudestaan.'),
-(2, 1, CURDATE(), 5, 'Seikkailu, huumori ja musiikki toimivat edelleen erinomaisesti.'),
-(3, 1, CURDATE(), 4, 'Vauhdikas aarteenmetsästys, jossa ei juuri ole tylsiä hetkiä.'),
-(2, 2, CURDATE(), 5, 'Inception on älykäs ja näyttävä scifi, joka palkitsee uudelleenkatselun.'),
-(3, 3, CURDATE(), 5, 'Tyylikäs scifi-klassikko, joka muutti toimintaelokuvia pysyvästi.'),
-(4, 4, CURDATE(), 4, 'Shutter Island on synkkä ja taitavasti rakennettu mysteeri.'),
-(5, 5, CURDATE(), 4, 'Sinister on tehokas kauhuelokuva, jossa tunnelma pysyy painostavana.'),
-(1, 6, CURDATE(), 4, '500 Days of Summer on raikas ja vähän haikea kuvaus ihastumisesta.'),
-(2, 7, CURDATE(), 5, 'Titanic on suuri romanttinen draama, joka toimii edelleen tunteella.');
+(1, 1, CURDATE(), 5, 'Hyva elokuva.'),
+(2, 1, CURDATE(), 5, 'Tykkasin paljon.'),
+(3, 1, CURDATE(), 4, 'Ihan hyva.'),
+(2, 2, CURDATE(), 5, 'Todella hyva.'),
+(3, 3, CURDATE(), 5, 'Hyva klassikko.'),
+(4, 4, CURDATE(), 4, 'Melko hyva.'),
+(5, 5, CURDATE(), 4, 'Aika pelottava.'),
+(1, 6, CURDATE(), 4, 'Mukava elokuva.'),
+(2, 7, CURDATE(), 5, 'Tosi hyva.');

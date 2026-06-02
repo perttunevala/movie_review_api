@@ -283,7 +283,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"movie_id\": 2,\n  \"rating\": 5,\n  \"comment\": \"Inception on älykäs ja näyttävä scifi, joka palkitsee uudelleenkatselun.\"\n}",
+              "raw": "{\n  \"movie_id\": 2,\n  \"rating\": 5,\n  \"comment\": \"Todella hyva.\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -313,7 +313,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"rating\": 4,\n  \"comment\": \"Hyvä elokuva, jonka idea toimii edelleen hienosti.\"\n}",
+              "raw": "{\n  \"rating\": 4,\n  \"comment\": \"Ihan hyva.\"\n}",
               "options": {
                 "raw": {
                   "language": "json"

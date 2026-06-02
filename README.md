@@ -209,7 +209,7 @@ POST http://localhost:3000/reviews
 {
   "movie_id": 1,
   "rating": 5,
-  "comment": "Indiana Jones on kestoklassikko, jonka pariin palaa aina uudestaan."
+  "comment": "Hyva elokuva."
 }
 ```
 
