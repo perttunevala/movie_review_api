@@ -1,23 +1,22 @@
-# Movie Review API
+# Movie Review A
 
-Movie Review API on Node.js-, Express- ja MySQL-teknologioilla rakennettu REST API elokuva-arvostelusovellukselle. Sovellus on toteutettu MVC-arkkitehtuurilla, ja sen avulla voidaan hallita käyttäjiä, elokuvia ja elokuva-arvosteluja.
+Tämä on tietokannat ja rajapinnat kurssin harjoitustyö
 
 Sovelluksessa käyttäjä voi rekisteröityä, kirjautua sisään ja käyttää suojattuja reittejä JWT-tokenin avulla. Salasanat tallennetaan tietokantaan bcryptillä kryptattuina.
 
-## Teknologiat
+# työssä käytetyt teknologiat
 
 - Node.js
 - Express
-- MySQL / MariaDB
+- MySQL
 - MVC-arkkitehtuuri
 - JWT authentication
 - bcrypt password hashing
 - dotenv
 - mysql2
-- cors
 - Postman
 
-## Toiminnallisuus
+# Toiminnallisuus
 
 Sovellus täyttää CRUD-vaatimukset:
 
@@ -26,7 +25,7 @@ Sovellus täyttää CRUD-vaatimukset:
 - Update: elokuvien ja arvostelujen päivittäminen
 - Delete: elokuvien ja arvostelujen poistaminen
 
-Käyttäjä kirjautuu sisään JWT-tokenilla. Token vaaditaan kaikissa `/movies` ja `/reviews` reiteissä.
+Käyttäjä kirjautuu sisään JWT-tokenilla. 
 
 Lisäksi sovelluksessa on muutamia tarkistuksia:
 
@@ -54,51 +53,11 @@ Relaatiot:
 - yksi elokuva voi saada monta arvostelua
 - `reviews`-taulu liittyy sekä `users`- että `movies`-tauluun viiteavaimilla
 
-Viiteavaimet:
-
-```text
-reviews.user_id -> users.user_id
-reviews.movie_id -> movies.movie_id
-```
-
-Viiteavaimissa käytetään:
-
-```text
-ON DELETE CASCADE
-ON UPDATE CASCADE
-```
 
 ## ER-Diagrammi
 
 ![ER-diagrammi](docs/er-diagram.svg)
 
-```mermaid
-erDiagram
-    USERS ||--o{ REVIEWS : writes
-    MOVIES ||--o{ REVIEWS : receives
-
-    USERS {
-        int user_id PK
-        varchar username
-        varchar password_hash
-    }
-
-    MOVIES {
-        int movie_id PK
-        varchar title
-        varchar genre
-        int release_year
-    }
-
-    REVIEWS {
-        int review_id PK
-        int user_id FK
-        int movie_id FK
-        date review_date
-        int rating
-        text comment
-    }
-```
 
 ## Stored Procedure
 
