@@ -58,8 +58,7 @@ Relaatiot:
 
 ## ER-Diagrammi
 
-![ER-diagrammi](docs/er-diagram.svg)
-
+![ER-diagrammi](docs/ER_diagrammi.png)
 
 ## Stored Procedure
 
