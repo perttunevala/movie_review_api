@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+  <title id="title">Movie Review API ER Diagram</title>
+  <desc id="desc">ER diagram for users, movies and reviews tables.</desc>
+  <defs>
+    <style>
+      .canvas { fill: #f8fafc; }
+      .table { fill: #ffffff; stroke: #334155; stroke-width: 2; }
+      .header { fill: #dbeafe; stroke: #334155; stroke-width: 2; }
+      .title { font: 700 18px Arial, sans-serif; fill: #0f172a; }
+      .field { font: 15px Arial, sans-serif; fill: #0f172a; }
+      .key { fill: #f59e0b; }
+      .fk { fill: #ef4444; }
+      .line { stroke: #475569; stroke-width: 2.5; fill: none; }
+      .label { font: 13px Arial, sans-serif; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect class="canvas" width="980" height="560"/>
+
+  <g transform="translate(60 280)">
+    <rect class="table" width="280" height="190" rx="6"/>
+    <rect class="header" width="280" height="42" rx="6"/>
+    <text class="title" x="18" y="27">movies</text>
+    <circle class="key" cx="22" cy="65" r="6"/>
+    <text class="field" x="42" y="70">movie_id INT PK</text>
+    <circle cx="22" cy="95" r="5" fill="#38bdf8"/>
+    <text class="field" x="42" y="100">title VARCHAR(255)</text>
+    <circle cx="22" cy="125" r="5" fill="#38bdf8"/>
+    <text class="field" x="42" y="130">genre VARCHAR(100)</text>
+    <circle cx="22" cy="155" r="5" fill="#38bdf8"/>
+    <text class="field" x="42" y="160">release_year INT</text>
+  </g>
+
+  <g transform="translate(370 70)">
+    <rect class="table" width="280" height="220" rx="6"/>
+    <rect class="header" width="280" height="42" rx="6"/>
+    <text class="title" x="18" y="27">reviews</text>
+    <circle class="key" cx="22" cy="65" r="6"/>
+    <text class="field" x="42" y="70">review_id INT PK</text>
+    <circle class="fk" cx="22" cy="95" r="6"/>
+    <text class="field" x="42" y="100">user_id INT FK</text>
+    <circle class="fk" cx="22" cy="125" r="6"/>
+    <text class="field" x="42" y="130">movie_id INT FK</text>
+    <circle cx="22" cy="155" r="5" fill="#38bdf8"/>
+    <text class="field" x="42" y="160">review_date DATE</text>
+    <circle cx="22" cy="185" r="5" fill="#38bdf8"/>
+    <text class="field" x="42" y="190">rating INT</text>
+    <circle cx="22" cy="215" r="5" fill="#38bdf8"/>
+    <text class="field" x="42" y="220">comment TEXT</text>
+  </g>
+
+  <g transform="translate(700 280)">
+    <rect class="table" width="280" height="160" rx="6"/>
+    <rect class="header" width="280" height="42" rx="6"/>
+    <text class="title" x="18" y="27">users</text>
+    <circle class="key" cx="22" cy="65" r="6"/>
+    <text class="field" x="42" y="70">user_id INT PK</text>
+    <circle cx="22" cy="95" r="5" fill="#38bdf8"/>
+    <text class="field" x="42" y="100">username VARCHAR(100)</text>
+    <circle cx="22" cy="125" r="5" fill="#38bdf8"/>
+    <text class="field" x="42" y="130">password_hash VARCHAR(255)</text>
+  </g>
+
+  <path class="line" d="M 340 360 C 390 360, 360 190, 370 190"/>
+  <text class="label" x="205" y="255">1 movie</text>
+  <text class="label" x="385" y="310">many reviews</text>
+
+  <path class="line" d="M 700 360 C 650 360, 690 160, 650 160"/>
+  <text class="label" x="725" y="255">1 user</text>
+  <text class="label" x="585" y="310">many reviews</text>
+</svg>
